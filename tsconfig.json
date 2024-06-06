@@ -1,8 +1,18 @@
 {
-  "extends": "@nilli/tsconfig/node.json",
-  "include": ["./scripts", "./test", "./typechain-types"],
-  "exclude": ["node_modules", "build", "cache", "artifacts"],
-  "files": ["./hardhat.config.ts"],
+  "include": [
+    "./scripts",
+    "./test",
+    "./typechain-types"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "cache",
+    "artifacts"
+  ],
+  "files": [
+    "./hardhat.config.ts"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs"
