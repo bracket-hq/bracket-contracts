@@ -1,0 +1,54 @@
+{
+  "name": "@nilli/hardhat",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf artifacts cache node_modules .cspellcache .eslintcache",
+    "clean:hardhat": "rimraf artifacts cache",
+    "compile": "hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy_new_curve.ts",
+    "fix": "pnpm run fix:eslint && pnpm run fix:prettier",
+    "postinstall": "hardhat typechain",
+    "league:deploy": "npx hardhat run scripts/league/deploy.ts",
+    "league:endgame": "npx hardhat run scripts/league/endgame.ts",
+    "league:initCollectives": "npx hardhat run scripts/league/initCollectives.ts",
+    "league:premine": "npx hardhat run scripts/league/premine.ts",
+    "lint": "pnpm run lint:eslint && pnpm run lint:prettier",
+    "test": "pnpm hardhat test",
+    "upgrade:dev": "npx hardhat run scripts/deploy_upgrade_dev.ts --network sepolia",
+    "upgrade:prod": "npx hardhat run scripts/deploy_upgrade_prod.ts --network base"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-solidity"
+    ]
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.0.1",
+    "@openzeppelin/contracts-upgradeable": "5.0.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "2.0.6",
+    "@nomicfoundation/hardhat-ethers": "3.0.5",
+    "@nomicfoundation/hardhat-network-helpers": "1.0.10",
+    "@nomicfoundation/hardhat-toolbox": "4.0.0",
+    "@nomicfoundation/hardhat-verify": "2.0.4",
+    "@nomiclabs/hardhat-ethers": "2.2.3",
+    "@nomiclabs/hardhat-etherscan": "3.1.8",
+    "@openzeppelin/hardhat-upgrades": "3.0.3",
+    "@safe-global/protocol-kit": "3.0.1",
+    "@safe-global/safe-core-sdk-types": "4.0.1",
+    "@typechain/ethers-v6": "0.5.1",
+    "@typechain/hardhat": "9.1.0",
+    "@types/node": "20.11.25",
+    "chai": "4.4.1",
+    "enquirer": "^2.4.1",
+    "ethers": "6.9.1",
+    "hardhat": "2.21.0",
+    "hardhat-gas-reporter": "1.0.10",
+    "prettier-plugin-solidity": "1.3.1",
+    "solidity-coverage": "0.8.8",
+    "ts-node": "10.9.2",
+    "typechain": "8.3.2",
+    "typescript": "5.4.2"
+  }
+}
